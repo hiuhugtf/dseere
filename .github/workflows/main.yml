@@ -1,0 +1,15 @@
+on: [push, pull_request] 
+jobs: 
+  Build: 
+    name: Build 
+    runs-on: ubuntu-20.04 
+    strategy: 
+      fail-fast: false 
+      matrix: 
+        plan: [1, 2, 3, 4] 
+        flag: [A, B, C, D, E] 
+    steps: 
+    - name: Setup 
+      uses: actions/checkout@v2 
+    - name: Install 
+      run: echo "a"
